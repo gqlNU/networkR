@@ -1,4 +1,4 @@
-# networkR
+# Enhancement lecture 2023/24: visualising and analysing network data in R
 
 ```r
 rm(list=ls())
