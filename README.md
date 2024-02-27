@@ -9,7 +9,7 @@ library(igraph)
 #####################
 nodes <- read.table(header=TRUE,text='
    id	 name
- 	1     Dom
+    1     Dom
     2   Grace
     3    Adam
     4     Bob
@@ -31,24 +31,21 @@ nodes <- read.table(header=TRUE,text='
    20   Helen')
 
 
-########################################
-#  the connection data frame
-#  based on the seating 
+###################################################
+#  the connection data frame based on the seating 
 #  arrangement in the first lecture
-########################################
-
+###################################################
 cnts1 <- read.table(header=TRUE,text='
    source target
-	    1 	   2
-	    3	   4
-	    4	   5
+        1      2
+	3      4
+        4      5
         5      6
         7      8
         8      9
         9     10
        10     11
-       11     12
-')
+       11     12')
 
 #  creating a graph 
 g1 <- graph_from_data_frame(cnts1,dir=FALSE,vertices=nodes)
