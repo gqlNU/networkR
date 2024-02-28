@@ -52,10 +52,28 @@ cnts <- read.table(header=TRUE,text='
 
 
 ')
+```
 
+## Step 3: create visualise the graph using <code>igraph</code>
+You need to install and load the package. 
+
+**Note:** you only need to install a package once but you need to load the packge every time you reopen RStudio. 
+
+When the code is run successfully, you will have a graph as displayed on [Slide 13 in the lecture](https://docs.google.com/presentation/d/1iLb8AgVCaw7t4xEBdy8dU-cVZhQiCZURTyABgDLQRTo/edit#slide=id.g2bcc7878f8f_0_26).
+
+```r
+install.packages('igraph',repos='http://cran.r-project.org')
+library(igraph)
+```
+
+The code below creates and plot the network.
+```r
 #  creating a graph 
-g1 <- graph_from_data_frame(cnts1,dir=FALSE,vertices=nodes)
+g <- graph_from_data_frame(cnts,           # the connection matrix
+                           dir=FALSE,      # this specifies an undirected graph (i.e. no arrows on the edges)
+                           vertices=nodes) # the labels of the nodes come from the node matrix
 
-#  plot the graph created
-plot(g1,vertex.size=22)
+#  plot the graph
+plot(g,
+     vertex.size=22)  # vertex.size specifies the size of the nodes
 ```
